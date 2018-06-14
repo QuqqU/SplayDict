@@ -1,4 +1,2 @@
 language: objective-c
-xcode_workspace: Example/SplayDict.xcworkspace/
-xcode_scheme: SplayDict-Example
-osx_image: xcode9.3
+
