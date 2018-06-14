@@ -14,7 +14,11 @@ protocol SplayDictProtocol {
 
 public class SplayDict<T: Hashable, G> : SplayDictProtocol where T: Comparable {
     
-    public var size: Int = 0
+    public var size: Int {
+        get{
+            return self.splayTree.size
+        }
+    }
     private var splayTree = SplayTree<T, G>()
 
     

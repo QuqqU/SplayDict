@@ -29,6 +29,9 @@ class SplayTree<T: Hashable, G> : SplayTreeProtocol where T: Comparable {
         return self.tree
     }
     
+    internal init() {
+        
+    }
     
     private func updateSubtreeSize(node: Node<T, G>) {
         node.subtreeSize = 1
