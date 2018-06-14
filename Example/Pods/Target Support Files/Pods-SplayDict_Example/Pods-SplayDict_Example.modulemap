@@ -1,0 +1,6 @@
+framework module Pods_SplayDict_Example {
+  umbrella header "Pods-SplayDict_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}

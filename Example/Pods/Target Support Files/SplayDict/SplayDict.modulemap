@@ -1,0 +1,6 @@
+framework module SplayDict {
+  umbrella header "SplayDict-umbrella.h"
+
+  export *
+  module * { export * }
+}

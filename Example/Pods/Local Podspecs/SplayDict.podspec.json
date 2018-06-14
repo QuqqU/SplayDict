@@ -1,0 +1,22 @@
+{
+  "name": "SplayDict",
+  "version": "0.1.0",
+  "summary": "A short description of SplayDict.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/QuqqU/SplayDict",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "QuqqU": "rldnd913@naver.com"
+  },
+  "source": {
+    "git": "https://github.com/QuqqU/SplayDict.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "SplayDict/Classes/**/*"
+}
