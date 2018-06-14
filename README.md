@@ -133,11 +133,25 @@ $ sudo gem install cocoapods --pre
 ```
 > Cocoapod 1.5.3+ is required.
 
-If you install cocoapod, then run the command below.
+To use SplayDict in your project using CocoaPod, add the following code in your `Podfile`.
 
 ```ruby
-pod 'SplayDict', '~> 0.2.3'
+platform :ios, '10.0'
+use_frameworks!
+
+target '<Your Target Name>' do
+    pod 'SplayDict', '~> 0.2.3'
+end
 ```
+
+
+If you edit Podfile, then run the command below.
+
+```bash
+$ pod install
+```
+
+
 
 
 <a id="Contact"></a>
