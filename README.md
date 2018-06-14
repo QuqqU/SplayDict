@@ -9,7 +9,7 @@
 SplayDict written in Swift, is a collection type like special ordered [set](https://developer.apple.com/documentation/swift/set?changes=_2). 
 It's based on [Splay tree](https://en.wikipedia.org/wiki/Splay_tree) which reflects tendency of search input data. 
 
-- [Why is SplayDict needed?](#why)
+- [What is SplayDict?](#why)
 - [TODO](#TODO)
 - [Usage](#Usage)
 - [Requirment](#Requirment)
