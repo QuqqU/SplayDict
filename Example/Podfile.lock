@@ -1,7 +1,7 @@
 PODS:
   - Nimble (7.0.3)
   - Quick (1.2.0)
-  - SplayDict (0.1.0)
+  - SplayDict (0.1.1)
 
 DEPENDENCIES:
   - Nimble (~> 7.0.2)
@@ -15,7 +15,7 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   Nimble: 7f5a9c447a33002645a071bddafbfb24ea70e0ac
   Quick: 58d203b1c5e27fff7229c4c1ae445ad7069a7a08
-  SplayDict: 32f8f31a34eabce24fee8fd9855e06e30a538f15
+  SplayDict: e4a76742ecb9fd61060ffaf42c44ee32973021af
 
 PODFILE CHECKSUM: 3d57311b6a6deadc54d7f5a11d7bbd59782eb2b1
 

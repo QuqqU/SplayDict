@@ -16,7 +16,12 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         
         
-   
+        let a = SplayDict<Int, Int>()
+        a[3] = 5
+        a[4] = 7
+        a.insert(key: 5, value: 6)
+        
+        dump(a)
         
     }
 
