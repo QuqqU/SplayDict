@@ -30,6 +30,7 @@ According to [Pareto's law](https://en.wikipedia.org/wiki/Pareto_principle), usi
 
 <a id="TODO"></a>
 ## TODO
+- travis (I don't know how to do...)
 - SplayTree
 - flatMap
 - SplayDict to Json
@@ -125,7 +126,7 @@ it, simply add the following line to your Podfile:
 ## Installation
 
 ```ruby
-pod 'SplayDict'
+pod 'SplayDict', '~> 0.2.3'
 ```
 
 
