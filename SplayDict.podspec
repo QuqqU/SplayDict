@@ -25,7 +25,9 @@ SplayDict written in Swift, is a collection type like special ordered set. It is
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'QuqqU' => 'rldnd913@naver.com' }
   s.source           = { :git => 'https://github.com/QuqqU/SplayDict.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+  s.swift_version = '4.1'
+  s.cocoapods_version = '>= 1.5.3'
+# s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '9.0'
 
