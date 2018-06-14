@@ -124,6 +124,16 @@ a.reverse(from: 3, to: 6)
 SplayDict is available through [CocoaPods](https://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 ## Installation
+### CocoaPods
+
+[CocoaPods](http://cocoapods.org) is a dependency manager for Cocoa projects. You can install it using the following command.
+
+```bash
+$ sudo gem install cocoapods --pre
+```
+> Cocoapod 1.5.3+ is required.
+
+If you install cocoapod, then run the command below.
 
 ```ruby
 pod 'SplayDict', '~> 0.2.3'
