@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'SplayDict'
-  s.version          = '0.1.0'
+  s.version          = '0.1.1'
   s.summary          = 'It is a collection type based on law of Pareto, splay tree.'
   s.swift_version    = '4.0'
 # This description is used to generate tags and improve search results.
