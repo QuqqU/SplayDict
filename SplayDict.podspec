@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'SplayDict'
-  s.version          = '0.1.1'
+  s.version          = '0.1.2'
   s.summary          = 'It is a collection type based on law of Pareto, splay tree.'
   s.swift_version    = '4.0'
 # This description is used to generate tags and improve search results.
@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-SplayDict written in Swift, is a collection type like special ordered set. It's based on Splay tree which reflects tendency of search input data.
+SplayDict written in Swift, is a collection type like special ordered set. It is based on Splay tree which reflects tendency of search input data.
                        DESC
 
   s.homepage         = 'https://github.com/QuqqU/SplayDict'
@@ -28,7 +28,7 @@ SplayDict written in Swift, is a collection type like special ordered set. It's 
   s.source           = { :git => 'https://github.com/QuqqU/SplayDict.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.ios.deployment_target = '8.0'
+  s.ios.deployment_target = '9.0'
 
   s.source_files = 'SplayDict/Classes/**/*'
   
