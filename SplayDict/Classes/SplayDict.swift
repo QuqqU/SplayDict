@@ -14,17 +14,17 @@ protocol SplayDictProtocol {
 
 public class SplayDict<T: Hashable, G> : SplayDictProtocol where T: Comparable {
     
-    public var size: Int {
+    var size: Int {
         get{
             return self.splayTree.size
         }
     }
     private var splayTree = SplayTree<T, G>()
 
-    
     public init() {
         
     }
+   
     
     public func insert(key: T, value: G) {
         splayTree.insert(key: key, value: value)

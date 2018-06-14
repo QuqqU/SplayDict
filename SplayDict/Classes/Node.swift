@@ -24,7 +24,7 @@ class Node<T: Comparable, G> {
 }
 
 extension Node: Equatable {
-    static func ==(lhs: Node, rhs: Node) -> Bool {
+    internal static func ==(lhs: Node, rhs: Node) -> Bool {
         if lhs.key == rhs.key { return true }
         else { return false }
     }
