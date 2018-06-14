@@ -19,7 +19,9 @@ It's based on [Splay tree](https://en.wikipedia.org/wiki/Splay_tree) which refle
 
 
 <a id="why"></a>
-## Why is SplayDict needed?
+## What is SplayDict?
+SplayDict is Dictionary using splay tree, not red-black tree.
+Due to attribution of splay tree, it is very fast to get data searched frequently.
 
 In real world, so many search are requested. And many people requset a same(or similar) data. Every request, every new search. It's very consumptively. 
 
@@ -41,7 +43,7 @@ According to [Pareto's law](https://en.wikipedia.org/wiki/Pareto_principle), usi
 
 - declaration
 ```swift
-var a: SplayDict<Int> = SplayDict() // make a empty splay set.
+var a: SplayDict<Int, Double> = SplayDict() // make a empty splay set.
 var b = SplayDict([1, 3, 2]) // make a set which contains 1, 2, 3.
 
 // and more constructor is building...
@@ -49,9 +51,14 @@ var b = SplayDict([1, 3, 2]) // make a set which contains 1, 2, 3.
 
 - insert
 ```swift
-var a: SplayDict<Int> = SplayDict()
-a.insert(3)
-// Insert integer 3 into splay tree(SplayDict).
+var a: SplayDict<Int, Int> = SplayDict()
+a.insert(key: 3, value: 7)
+// Insert [3 : 7] into SplayDict.
+a[5] = 12
+// Insert [5 : 12] into SplayDict.
+
+// If you want to insert key which is already exists,
+// then being value is replaced with newValue.
 ```
 
 - top
@@ -59,26 +66,29 @@ a.insert(3)
 _ = a.top 
 // Return a top element of SplayDict.
 // It's a latest searched data.
+// Read-only property
 ```
 
 - find
-```
-_ = a.find(3) 
-// Return true if search value exists, else return false.
-// And this make search value(or nearest value) be on a top of SplayDict.
+```swift
+var a: SplayDict<Int, String> = SplayDict()
+let value: String? = a.find(key: 7) 
+// Return value if search value exists, else return nil.
+// And this make searched key(or nearest key) be on a top of SplayDict.
 ```
 
 - delete
 ```swift
-a.delete(5)
-// Delete element in SplayDict.
-// Make a biggest value under input element be a top value.
+a.delete(key: 5)
+// Delete element corresponded with key in SplayDict.
+// Make a biggest key under input be a top element.
 ```
 
 - indexOf
 ```swift
-_ = a.indexOf(3)
-// Return n-th element if SplayDict.
+var a: SplayDict<Int, Double> = SplayDict()
+let value: Double? = a.indexOf(3)
+// Return n-th value if SplayDict.
 // If index is out of range, returns nil.
 ```
 
