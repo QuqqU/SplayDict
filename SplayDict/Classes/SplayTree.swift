@@ -7,32 +7,22 @@
 
 import Foundation
 
-protocol SplayTreeProtocol: class {
-    associatedtype T: Hashable where T: Comparable
-    associatedtype G
 
-    
-    func insert(key: T, value: G)
-    func find(key: T) -> G?
-    func delete(key: T)
-    //k-0based
-    //func findKthNumber(Kth k:Int) -> Int?
-}
-
-
-
-class SplayTree<T: Hashable, G> : SplayTreeProtocol where T: Comparable {
+class SplayTree<T: Comparable, G> {
     
     internal var tree: Node<T, G>?
     internal var size: Int = 0
     internal var top: Node<T, G>? {
         return self.tree
     }
+
+
     
     internal init() {
-        
+
     }
     
+
     private func updateSubtreeSize(node: Node<T, G>) {
         node.subtreeSize = 1
         if let _nodeLeft = node.left { node.subtreeSize += _nodeLeft.subtreeSize }
@@ -80,12 +70,13 @@ class SplayTree<T: Hashable, G> : SplayTreeProtocol where T: Comparable {
         }
     }
     
-    internal func insert(key: T, value: G) {
+    @discardableResult
+    internal func insert(key: T, value: G) -> Bool {
         if var p = tree {
             findKeyPlace : while true {
                 if key == p.key {
                     p.value = value
-                    return
+                    return false
                 }
                 if key < p.key {
                     guard let _pLeft = p.left else {
@@ -94,7 +85,7 @@ class SplayTree<T: Hashable, G> : SplayTreeProtocol where T: Comparable {
                         p.left = newNode
                         splay(target: newNode)
                         self.size += 1
-                        return
+                        return true
                     }
                     p = _pLeft
                 }
@@ -105,7 +96,7 @@ class SplayTree<T: Hashable, G> : SplayTreeProtocol where T: Comparable {
                         p.right = newNode
                         splay(target: newNode)
                         self.size += 1
-                        return
+                        return true
                     }
                     p = _pRight
                 }
@@ -115,6 +106,7 @@ class SplayTree<T: Hashable, G> : SplayTreeProtocol where T: Comparable {
             tree = Node<T, G>(key: key, value: value)
             self.size += 1
         }
+        return true
     }
     
     internal func find(key: T) -> G? {
