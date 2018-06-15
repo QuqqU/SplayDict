@@ -20,9 +20,11 @@ class ViewController: UIViewController {
         a[3] = 5
         a[4] = 7
         a.insert(key: 5, value: 6)
+        a[3] = 10
         
+        let b = a[10] {20}
+        print(b)
         dump(a)
-        
     }
 
     
