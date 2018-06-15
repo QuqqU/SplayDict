@@ -17,7 +17,6 @@ class SplayTree<T: Comparable, G> {
     }
 
 
-    
     internal init() {
 
     }
