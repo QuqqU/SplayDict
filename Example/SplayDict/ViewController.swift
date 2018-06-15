@@ -22,9 +22,16 @@ class ViewController: UIViewController {
         a.insert(key: 5, value: 6)
         a[3] = 10
         
+        
+        let (c, d) = a.top!
+        a.top?.key
+        a.topKey
         let b = a[10] {20}
         print(b)
         dump(a)
+        
+        
+        a.elements
     }
 
     
