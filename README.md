@@ -44,8 +44,8 @@ According to [Pareto's law](https://en.wikipedia.org/wiki/Pareto_principle), usi
 
 - declaration
 ```swift
-var a: SplayDict<Int, Double> = SplayDict() // make a empty splay set.
-var b = SplayDict([1, 3, 2]) // make a set which contains 1, 2, 3.
+var a: SplayDict<Int, Double> = SplayDict() // make a empty SplayDict.
+var b = SplayDict([1, 3, 2]) // make a SplayDict which contains 1, 2, 3.
 
 // and more constructor is building...
 ```
