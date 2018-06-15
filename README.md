@@ -11,9 +11,9 @@ It's based on [Splay tree](https://en.wikipedia.org/wiki/Splay_tree) which refle
 
 - [What is SplayDict?](#why)
 - [TODO](#TODO)
-- [Usage](#Usage)
 - [Requirment](#Requirment)
 - [Installation](#Installation)
+- [Usage](#Usage)
 - [Contact](#Contact)
 - [License](#License)
 
@@ -37,80 +37,6 @@ According to [Pareto's law](https://en.wikipedia.org/wiki/Pareto_principle), usi
 - Subscript
 - More methods
 - Adopt protocols such as CustomStringConvertible, Sequence, etc.
-
-
-<a id="Usage"></a>
-## Usage
-
-- declaration
-```swift
-var a: SplayDict<Int, Double> = SplayDict() // make a empty SplayDict.
-var b = SplayDict([1, 3, 2]) // make a SplayDict which contains 1, 2, 3.
-
-// and more constructor is building...
-```
-
-- insert
-```swift
-var a: SplayDict<Int, Int> = SplayDict()
-a.insert(key: 3, value: 7)
-// Insert [3 : 7] into SplayDict.
-a[5] = 12
-// Insert [5 : 12] into SplayDict.
-
-// If you want to insert key which is already exists,
-// then being value is replaced with newValue.
-```
-
-- top
-```swift
-_ = a.top 
-// Return a top element of SplayDict.
-// It's a latest searched data.
-// Read-only property
-```
-
-- find
-```swift
-var a: SplayDict<Int, String> = SplayDict()
-let value: String? = a.find(key: 7) 
-// Return value if search value exists, else return nil.
-// And this make searched key(or nearest key) be on a top of SplayDict.
-```
-
-- delete
-```swift
-a.delete(key: 5)
-// Delete element corresponded with key in SplayDict.
-// Make a biggest key under input be a top element.
-```
-
-- indexOf
-```swift
-var a: SplayDict<Int, Double> = SplayDict()
-let value: Double? = a.indexOf(3)
-// Return n-th value if SplayDict.
-// If index is out of range, returns nil.
-```
-
-- reverse
-```swift
-a.reverse(from: 3, to: 6)
-// Reverse elements. (from 3 to 6)
-// Implement using Lazy Propagtion.
-
-// example
-// Let splay set consists of [0, 1, 2, 3, 4, 5, 6].
-// reverse(from: 3, to : 6).
-// The result is [0, 1, 2, 6, 5, 4, 3].
-```
-
-
-
-
-
-
-
 
 <a id="Requirment"></a>
 ## Requirement
@@ -145,11 +71,138 @@ end
 ```
 
 
-If you edit Podfile, then run the command below.
+After you edit Podfile, then run the command below.
 
 ```bash
 $ pod install
 ```
+
+<a id="Usage"></a>
+## Usage
+
+```swift
+/////////////////////////////////////////////////////////////
+///* Declaration *///
+/////////////////////////////////////////////////////////////
+
+var a: SplayDict<Int, Double> = SplayDict() // make a empty SplayDict.
+var b = SplayDict([1, 3, 2]) // make a SplayDict which contains 1, 2, 3.
+
+// and more constructor is building...
+
+
+/////////////////////////////////////////////////////////////
+///* Insert *///
+/////////////////////////////////////////////////////////////
+
+var a: SplayDict<Int, Int> = SplayDict()
+a.insert(key: 3, value: 7)
+// Insert [3 : 7] into SplayDict.
+
+a[5] = 12
+// Insert [5 : 12] into SplayDict.
+
+// If you want to insert key which is already exists,
+// then being value is replaced with newValue.
+
+
+/////////////////////////////////////////////////////////////
+///* Top *///
+/////////////////////////////////////////////////////////////
+
+// nil if SplayDict is empty.
+let (a, b) = a.top!
+// Return a top element key & value of SplayDict.
+// It's a latest searched data.
+// Read-only property
+
+_ = a.top?.key
+_ = a.topKey
+// Return top element key.
+
+_ = a.top?.value
+_ = a.topValue
+// Return top element value
+
+
+/////////////////////////////////////////////////////////////
+///* Find *///
+/////////////////////////////////////////////////////////////
+
+var a: SplayDict<Int, String> = SplayDict()
+let value: String? = a.find(key: 7) 
+// Return value if search value exists, else return nil.
+// And this make searched key(or nearest key) be on a top of SplayDict.
+
+
+/////////////////////////////////////////////////////////////
+///* Delete *///
+/////////////////////////////////////////////////////////////
+
+a.delete(key: 5)
+// Delete element corresponded with key in SplayDict.
+// Make a biggest key under input be a top element.
+
+
+/////////////////////////////////////////////////////////////
+///* Read *///
+/////////////////////////////////////////////////////////////
+
+var a: SplayDict<Int, Double> = SplayDict()
+let value: Double? = a.indexOf(3)
+// Return n-th value if SplayDict.
+// If index is out of range, returns nil.
+
+_ = a[4]
+// You can use subscript to read value related to key.
+// If there is no key corresponding to input, return value as nil.
+
+- = a[12]{50}
+// You can set default value rather than nil.
+// If there is key corresponding to input, return value related to input key.
+// Otherwise, return default value.
+
+_ = a.elements
+// Return all [key : value] elements orderly according to comparable key.
+
+_ = a.keys
+// Return all keys orderly.
+
+_ = a.values
+// Return all values unorderly.
+
+
+/////////////////////////////////////////////////////////////
+///* Custom String *///
+/////////////////////////////////////////////////////////////
+
+//- description
+> [ (3 : 10), (4 : 7), (5 : 6) ]
+
+
+//- debugDescription
+>   ----- SplayDict -----
+      key: 3, value: 10
+      key: 4, value: 7
+      key: 5, value: 6 
+|||---/ SplayDict /---/
+
+
+/////////////////////////////////////////////////////////////
+///* Other Operations *///
+/////////////////////////////////////////////////////////////
+
+
+a.reverse(from: 3, to: 6)
+// Reverse elements. (from 3 to 6)
+// Implement using Lazy Propagtion.
+
+// example
+// Let splay set consists of [0, 1, 2, 3, 4, 5, 6].
+// reverse(from: 3, to : 6).
+// The result is [0, 1, 2, 6, 5, 4, 3].
+```
+
 
 
 
