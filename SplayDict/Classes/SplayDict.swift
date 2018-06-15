@@ -39,6 +39,8 @@ extension SplayDict {
     public func insert(key: T, value: G) {
         if splayTree.insert(key: key, value: value) {
             _elements.append((key: key, value: value))
+            _keys.append(key)
+            _values.append(value)
         }
         else {
             for i in 0..<self.size {
@@ -57,22 +59,22 @@ extension SplayDict {
         }
         set(newValue) {
             guard let _newValue = newValue else { return }
-            splayTree.insert(key: key, value: _newValue)
+            insert(key: key, value: _newValue)
         }
     }
     
-    public subscript(key: T, defaultValue: G) -> G {
-        return splayTree.find(key: key) ?? defaultValue
+    public subscript(key: T, defaultValue: () -> G) -> G {
+        return splayTree.find(key: key) ?? defaultValue()
     }
     
     //--
     
-    public var top: (T, G)? {
-        guard let key = splayTree.top?.key, let value = splayTree.top?.value else { return nil }
-        return (key, value)
+    public var top: (key: T, value: G)? {
+        guard let _top = splayTree.top else { return nil }
+        return (_top.key, _top.value)
     }
-    
-    
+    public var topKey: T? { return splayTree.top?.key }
+    public var topValue: G? { return splayTree.top?.value }
     public var elements: Array<(key: T, value: G)> { return _elements.sorted { $0.key < $1.key } }
     public var keys: Array<T> { return _keys.sorted() }
     public var values: Array<G> { return _values }
@@ -85,15 +87,15 @@ extension SplayDict {
 extension SplayDict: CustomStringConvertible, CustomDebugStringConvertible {
     public var description: String {
         var string: String = ""
-        elements.forEach { string += "( \($0.key) : \($0.value),)" }
+        elements.forEach { string += " (\($0.key) : \($0.value))," }
         string.removeLast()
         return "[\(string) ]"
     }
     
     public var debugDescription: String {
         var string: String = "----- SplayDict -----\n"
-        elements.forEach { string += "key: \($0.key), value: \($0.value)\n" }
-        string += "/---/ SplayDict /---/\n"
+        elements.forEach { string += "      key: \($0.key), value: \($0.value)\n" }
+        string += "///---/ SplayDict /---/\n"
         return string
     }
     
