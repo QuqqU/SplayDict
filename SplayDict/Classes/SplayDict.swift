@@ -95,7 +95,7 @@ extension SplayDict: CustomStringConvertible, CustomDebugStringConvertible {
     public var debugDescription: String {
         var string: String = "----- SplayDict -----\n"
         elements.forEach { string += "      key: \($0.key), value: \($0.value)\n" }
-        string += "///---/ SplayDict /---/\n"
+        string += "|||---/ SplayDict /---|\n"
         return string
     }
     
