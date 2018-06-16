@@ -47,8 +47,8 @@ According to [Pareto's law](https://en.wikipedia.org/wiki/Pareto_principle), usi
 
 
 <a id="Installation"></a>
-SplayDict is available through [CocoaPods](https://cocoapods.org). To install
-it, simply add the following line to your Podfile:
+
+
 ## Installation
 ### CocoaPods
 
@@ -80,38 +80,33 @@ $ pod install
 <a id="Usage"></a>
 ## Usage
 
-```swift
-/////////////////////////////////////////////////////////////
-///* Declaration *///
-/////////////////////////////////////////////////////////////
 
+### Declaration
+```swift
 var a: SplayDict<Int, Double> = SplayDict() // make a empty SplayDict.
 var b = SplayDict([1, 3, 2]) // make a SplayDict which contains 1, 2, 3.
+```
+And more constructor is building...
 
-// and more constructor is building...
 
-
-/////////////////////////////////////////////////////////////
-///* Insert *///
-/////////////////////////////////////////////////////////////
-
+### Insert
+```swift
 var a: SplayDict<Int, Int> = SplayDict()
 a.insert(key: 3, value: 7)
 // Insert [3 : 7] into SplayDict.
 
 a[5] = 12
 // Insert [5 : 12] into SplayDict.
+```
+If you want to insert key which is already exists,
+then being value is replaced with newValue.
 
-// If you want to insert key which is already exists,
-// then being value is replaced with newValue.
 
-
-/////////////////////////////////////////////////////////////
-///* Top *///
-/////////////////////////////////////////////////////////////
-
-// nil if SplayDict is empty.
-let (a, b) = a.top!
+### Top
+Nil if SplayDict is empty.
+```swift
+var a: SplayDict<Int, String> = SplayDict()
+let (c, d) = a.top!
 // Return a top element key & value of SplayDict.
 // It's a latest searched data.
 // Read-only property
@@ -123,31 +118,28 @@ _ = a.topKey
 _ = a.top?.value
 _ = a.topValue
 // Return top element value
+```
 
-
-/////////////////////////////////////////////////////////////
-///* Find *///
-/////////////////////////////////////////////////////////////
-
+### Find
+```swift
 var a: SplayDict<Int, String> = SplayDict()
 let value: String? = a.find(key: 7) 
-// Return value if search value exists, else return nil.
-// And this make searched key(or nearest key) be on a top of SplayDict.
+```
+Return value if search value exists, else return nil.  
+And this make searched key(or nearest key) be on a top of SplayDict.
 
 
-/////////////////////////////////////////////////////////////
-///* Delete *///
-/////////////////////////////////////////////////////////////
-
+### Delete
+```swift
+var a: SplayDict<Int, String> = SplayDict()
 a.delete(key: 5)
-// Delete element corresponded with key in SplayDict.
-// Make a biggest key under input be a top element.
+```
+Delete element corresponded with key in SplayDict.  
+Make a biggest key under input be a top element.
 
 
-/////////////////////////////////////////////////////////////
-///* Read *///
-/////////////////////////////////////////////////////////////
-
+### Read
+```swift
 var a: SplayDict<Int, Double> = SplayDict()
 let value: Double? = a.indexOf(3)
 // Return n-th value if SplayDict.
@@ -170,38 +162,19 @@ _ = a.keys
 
 _ = a.values
 // Return all values unorderly.
+``` 
 
 
-/////////////////////////////////////////////////////////////
-///* Custom String *///
-/////////////////////////////////////////////////////////////
-
-//- description
-> [ (3 : 10), (4 : 7), (5 : 6) ]
-
-
-//- debugDescription
->   ----- SplayDict -----
-      key: 3, value: 10
-      key: 4, value: 7
-      key: 5, value: 6 
-|||---/ SplayDict /---/
-
-
-/////////////////////////////////////////////////////////////
-///* Other Operations *///
-/////////////////////////////////////////////////////////////
-
-
+### Other Operations
+```swift
 a.reverse(from: 3, to: 6)
 // Reverse elements. (from 3 to 6)
 // Implement using Lazy Propagtion.
-
-// example
-// Let splay set consists of [0, 1, 2, 3, 4, 5, 6].
-// reverse(from: 3, to : 6).
-// The result is [0, 1, 2, 6, 5, 4, 3].
 ```
+Let splay set consists of [0, 1, 2, 3, 4, 5, 6].  
+reverse(from: 3, to : 6).   
+The result is [0, 1, 2, 6, 5, 4, 3].
+
 
 
 
