@@ -84,7 +84,7 @@ $ pod install
 ### Declaration
 ```swift
 var a: SplayDict<Int, Double> = SplayDict() // make a empty SplayDict.
-var b = SplayDict([1, 3, 2]) // make a SplayDict which contains 1, 2, 3.
+var b = SplayDict([(1, 3.1), (2, 5.2)]) // make with sequence contents.
 ```
 And more constructor is building...
 
