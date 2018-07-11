@@ -23,7 +23,7 @@ It's based on [Splay tree](https://en.wikipedia.org/wiki/Splay_tree) which refle
 SplayDict is Dictionary using splay tree, not red-black tree.
 Due to attribution of splay tree, it is very fast to get data searched frequently.
 
-In real world, so many search are requested. And many people requset a same(or similar) data. Every request, every new search. It's very consumptively. 
+In real world, so many search are requested. And many people request a same(or similar) data. Every request, every new search. It's very consumptively. 
 
 Using SplayDict, it's not waste of time. It takes a very short time to get data searched frequently. (But, It takes a little more time to find data searched occasionally.) 
 According to [Pareto's law](https://en.wikipedia.org/wiki/Pareto_principle), using SplayDict makes a program be productive, and even faster.
