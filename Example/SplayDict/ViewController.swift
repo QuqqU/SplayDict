@@ -15,23 +15,22 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        
-        let a = SplayDict<Int, Int>()
+        let c = [(2, 2), (6,4)]
+        var a = SplayDict<Int, Int>(c)
         a[3] = 5
         a[4] = 7
         a.insert(key: 5, value: 6)
         a[3] = 10
         
         
-        let (c, d) = a.top!
-        a.top?.key
-        a.topKey
-        let b = a[10] {20}
-        print(b)
-        dump(a)
+      
         
         
-        a.elements
+        for c in a {
+            print(c)
+        }
+        
+       
     }
 
     

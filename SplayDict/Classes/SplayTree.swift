@@ -69,13 +69,16 @@ class SplayTree<T: Comparable, G> {
         }
     }
     
-    @discardableResult
-    internal func insert(key: T, value: G) -> Bool {
+    internal func insert(_ element: (key: T, value: G)) {
+        self.insert(key: element.key, value: element.value)
+    }
+   
+    internal func insert(key: T, value: G)  {
         if var p = tree {
             findKeyPlace : while true {
                 if key == p.key {
                     p.value = value
-                    return false
+                    return
                 }
                 if key < p.key {
                     guard let _pLeft = p.left else {
@@ -84,7 +87,7 @@ class SplayTree<T: Comparable, G> {
                         p.left = newNode
                         splay(target: newNode)
                         self.size += 1
-                        return true
+                        return
                     }
                     p = _pLeft
                 }
@@ -95,7 +98,7 @@ class SplayTree<T: Comparable, G> {
                         p.right = newNode
                         splay(target: newNode)
                         self.size += 1
-                        return true
+                        return
                     }
                     p = _pRight
                 }
@@ -105,7 +108,6 @@ class SplayTree<T: Comparable, G> {
             tree = Node<T, G>(key: key, value: value)
             self.size += 1
         }
-        return true
     }
     
     internal func find(key: T) -> G? {
@@ -169,3 +171,36 @@ class SplayTree<T: Comparable, G> {
     
     
 }
+
+extension SplayTree {
+    internal func inorder() -> [(key: T, value: G)] {
+        var elements = [(key: T, value: G)]()
+        var stack = [Node<T, G>]()
+        
+        while !stack.isEmpty {
+            let curr = stack.last!
+            if let _left = curr.left { stack.append(_left) }
+            elements.append((key: curr.key, value: curr.value))
+            if let _right = curr.right { stack.append(_right) }
+            stack.removeLast()
+        }
+        
+        return elements
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
