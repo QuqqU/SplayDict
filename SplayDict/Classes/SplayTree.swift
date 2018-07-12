@@ -8,7 +8,7 @@
 import Foundation
 
 
-class SplayTree<T: Comparable, G> {
+internal class SplayTree<T: Comparable, G> {
     
     internal var tree: Node<T, G>?
     internal var size: Int = 0
@@ -69,9 +69,6 @@ class SplayTree<T: Comparable, G> {
         }
     }
     
-    internal func insert(_ element: (key: T, value: G)) {
-        self.insert(key: element.key, value: element.value)
-    }
    
     internal func insert(key: T, value: G)  {
         if var p = tree {
@@ -173,19 +170,15 @@ class SplayTree<T: Comparable, G> {
 }
 
 extension SplayTree {
-    internal func inorder() -> [(key: T, value: G)] {
-        var elements = [(key: T, value: G)]()
-        var stack = [Node<T, G>]()
-        
-        while !stack.isEmpty {
-            let curr = stack.last!
-            if let _left = curr.left { stack.append(_left) }
-            elements.append((key: curr.key, value: curr.value))
-            if let _right = curr.right { stack.append(_right) }
-            stack.removeLast()
+    internal func inorder() -> [Element<T, G>] {
+        func _inorder(_ curr: Node<T, G>?, _ list: [Element<T, G>]) -> [Element<T, G>] {
+            guard let _curr = curr else { return list }
+            var _list = _inorder(_curr.left, list)
+            _list.append(Element(key: _curr.key, value: _curr.value))
+            _list = _inorder(_curr.right, _list)
+            return _list
         }
-        
-        return elements
+        return _inorder(self.top, [])
     }
 }
 
