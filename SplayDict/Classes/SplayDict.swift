@@ -9,15 +9,16 @@ import Foundation
 
 
 
+
 public struct SplayDict<T: Comparable, G> {
     
     private var splayTree = SplayTree<T, G>()
     public var size: Int { return splayTree.size }
-    public var elements: [(key: T, value: G)] { return splayTree.inorder() }
+    public var elements: [Element<T, G>] { return splayTree.inorder() }
 
     public init() {}
     public init<S: Sequence>(_ sequence: S) where S.Iterator.Element == (key: T, value: G) {
-        sequence.forEach { splayTree.insert($0) }
+        sequence.forEach { splayTree.insert(key: $0.key, value: $0.value) }
     }
     
     
@@ -30,23 +31,32 @@ public struct SplayDict<T: Comparable, G> {
 
 }
 
-// - Sequence // must be modified // error
+// - Sequence
 extension SplayDict: Sequence {
-    public typealias Iterator = AnyIterator<(key: T, value: G)>
-    public func makeIterator() -> Iterator {
-        var iter =  elements.makeIterator()
-        return AnyIterator {
-            return iter.next()
-        }
+    public func makeIterator() -> IndexingIterator<[Element<T, G>]> {
+        return elements.makeIterator()
     }
 }
-///////////////////////////////////
 
+// - Collection
+/*
+extension SplayDict: Collection {
+    public var startIndex: T {
+        return self.elements.startIndex
+    }
+    
+    public var endIndex: T {
+        return self.elements.endIndex
+    }
+    
+    
+}
+*/
 
 // - Accessing Key and Value
 extension SplayDict {
     //insert
-    public func insert(_ element: (key: T, value: G)) {
+    public func insert(_ element: Element<T, G>) {
         splayTree.insert(key: element.key, value: element.value)
     }
     
@@ -72,9 +82,9 @@ extension SplayDict {
     }
     
     //-- top element
-    public var top: (key: T, value: G)? {
+    public var top: Element<T, G>? {
         guard let _top = splayTree.top else { return nil }
-        return (_top.key, _top.value)
+        return Element(key: _top.key, value: _top.value)
     }
     public var topKey: T? { return splayTree.top?.key }
     public var topValue: G? { return splayTree.top?.value }
@@ -82,12 +92,23 @@ extension SplayDict {
 }
 
 
+// - Expressible by literal
+extension SplayDict: ExpressibleByArrayLiteral {
+    public typealias ArrayLiteralElement = Element<T, G>
+    public init(arrayLiteral elements: ArrayLiteralElement...) {
+        self.init()
+        elements.forEach { self.splayTree.insert(key: $0.key, value: $0.value) }
+    }
+}
+
+
+
 // - Describing a SplayDict
 extension SplayDict: CustomStringConvertible, CustomDebugStringConvertible {
     public var description: String {
         var string: String = ""
         self.elements.forEach { string += " (key: \($0.key), value: \($0.value))," }
-        string.removeLast()
+        if !string.isEmpty { string.removeLast() }
         return "[\(string) ]"
     }
     public var debugDescription: String {
