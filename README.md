@@ -3,8 +3,12 @@
 
 [![CI Status](https://img.shields.io/travis/QuqqU/SplayDict.svg?style=flat)](https://travis-ci.org/QuqqU/SplayDict)
 [![Version](https://img.shields.io/cocoapods/v/SplayDict.svg?style=flat)](https://cocoapods.org/pods/SplayDict)
-[![License](https://img.shields.io/cocoapods/l/SplayDict.svg?style=flat)](https://cocoapods.org/pods/SplayDict)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=flat)](https://github.com/QuqqU/SplayDict/blob/master/LICENSE)
 [![Platform](https://img.shields.io/cocoapods/p/SplayDict.svg?style=flat)](https://cocoapods.org/pods/SplayDict)
+[![Swift 4.0](https://img.shields.io/badge/Swift-4.0-%23FB613C.svg)](https://developer.apple.com/swift/)
+[![Xcode 9](https://img.shields.io/badge/Xcode-9-blue.svg)](https://developer.apple.com/xcode)
+
+
 
 SplayDict written in Swift, is a collection type like special ordered [set](https://developer.apple.com/documentation/swift/set?changes=_2). 
 It's based on [Splay tree](https://en.wikipedia.org/wiki/Splay_tree) which reflects tendency of search input data. 
