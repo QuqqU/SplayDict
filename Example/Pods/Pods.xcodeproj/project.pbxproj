@@ -55,6 +55,8 @@
 		62D26CE7BA3AEDB4E5E87218FDCBBA90 /* Functional.swift in Sources */ = {isa = PBXBuildFile; fileRef = D954E7E4D336837086313DAE758F7F32 /* Functional.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		6593C547A71CCEFC480CD578080A327F /* mach_excServer.h in Headers */ = {isa = PBXBuildFile; fileRef = 835B6DA0EF74C46A43F1142347E4B44E /* mach_excServer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		65985C142EE8A74E6E56D5E30A39C79C /* Expectation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3018B485E8310AC7A651EF03D32D0823 /* Expectation.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
+		677785EC20F7A78F001E4D1E /* Element.swift in Sources */ = {isa = PBXBuildFile; fileRef = 677785EB20F7A78F001E4D1E /* Element.swift */; };
+		677785ED20F7A78F001E4D1E /* Element.swift in Sources */ = {isa = PBXBuildFile; fileRef = 677785EB20F7A78F001E4D1E /* Element.swift */; };
 		68FD03C72D719117929696B62038B3D7 /* NMBExpectation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2192785265D796ADAF8B5DE3C97DD4CE /* NMBExpectation.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		69B80157634D6FAF248D37F397732357 /* CwlPreconditionTesting.h in Headers */ = {isa = PBXBuildFile; fileRef = CAB52415DA15D60348D226639C322706 /* CwlPreconditionTesting.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6AACF04218E2D42FADFB65292FD1BEA7 /* ExampleGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829CA47FBDF0A83BF67F7102D4CD40E6 /* ExampleGroup.swift */; };
@@ -221,6 +223,7 @@
 		65B4CDEF78BF13177A9303C1E765E5F6 /* World+DSL.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "World+DSL.swift"; path = "Sources/Quick/DSL/World+DSL.swift"; sourceTree = "<group>"; };
 		6642EE042EBCD8FB5BA4D88BAF4EAB36 /* NimbleEnvironment.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NimbleEnvironment.swift; path = Sources/Nimble/Adapters/NimbleEnvironment.swift; sourceTree = "<group>"; };
 		66DC258B14BE115CA2B5395CE7444D3B /* SplayDict.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SplayDict.xcconfig; sourceTree = "<group>"; };
+		677785EB20F7A78F001E4D1E /* Element.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Element.swift; path = SplayDict/Classes/Element.swift; sourceTree = "<group>"; };
 		679FFD5386CAB1887F96D8FF6D84B7B8 /* mach_excServer.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = mach_excServer.c; path = Carthage/Checkouts/CwlPreconditionTesting/Sources/CwlMachBadInstructionHandler/mach_excServer.c; sourceTree = "<group>"; };
 		67C7BB2DC0DED3CBCF5D776D9E39AB30 /* Match.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Match.swift; path = Sources/Nimble/Matchers/Match.swift; sourceTree = "<group>"; };
 		698366519E8DF1484C0AE2845EB47D7F /* HaveCount.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HaveCount.swift; path = Sources/Nimble/Matchers/HaveCount.swift; sourceTree = "<group>"; };
@@ -549,6 +552,7 @@
 			isa = PBXGroup;
 			children = (
 				C6427AAF7D89098ACF8914DB39F11976 /* SplayDict.swift */,
+				677785EB20F7A78F001E4D1E /* Element.swift */,
 				5DF29DB4976C2E7BF43E39DEA2B70CF0 /* Node.swift */,
 				C241A366F439AC1FA17C939DD71FE864 /* SplayTree.swift */,
 				E95A9FAED256EC72B341B76D1952FA48 /* Pod */,
@@ -828,6 +832,7 @@
 				8B6D306895425B797BF4D9E1D21359BE /* SplayDict-dummy.m in Sources */,
 				53C375DFFC2BDA2114BB54C42B3C0910 /* SplayDict.swift in Sources */,
 				EBE58FD189C8344BECF979821D87EAFF /* SplayTree.swift in Sources */,
+				677785ED20F7A78F001E4D1E /* Element.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -873,6 +878,7 @@
 				ADEE95A3A188BE3095990E20766BCCC8 /* DSL+Wait.swift in Sources */,
 				8B55BD430033027AD5FF22D630DD9F62 /* DSL.m in Sources */,
 				1A3E19B9F5EEB773C3BB61CA42F8BF62 /* DSL.swift in Sources */,
+				677785EC20F7A78F001E4D1E /* Element.swift in Sources */,
 				3D1A89FDD6B579BAA92AD398E5C019F9 /* EndWith.swift in Sources */,
 				C8320A6164C870ADDB8A855ADEBBBDC9 /* Equal.swift in Sources */,
 				BC7B9761322C74FA27969BD55833BA47 /* Errors.swift in Sources */,
