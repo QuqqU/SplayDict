@@ -13,5 +13,5 @@ before_install:
   - pod repo update
 
 script:
-  - xcodebuild -workspace SplayDict.xcworkspace -scheme SplayDict-Example -configuration Debug -destination "OS=11.2,name=iPhone 8" -sdk iphonesimulator
+  - xcodebuild -workspace SplayDict.xcworkspace -scheme SplayDict -configuration Debug -destination "OS=11.2,name=iPhone 8" -sdk iphonesimulator
 
