@@ -8,7 +8,7 @@
 import Foundation
 
 
-class Node<T: Comparable, G> {
+internal class Node<T: Comparable, G> {
 
     internal var key: T
     internal var value: G
