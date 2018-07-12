@@ -5,8 +5,8 @@
 [![Version](https://img.shields.io/cocoapods/v/SplayDict.svg?style=flat)](https://cocoapods.org/pods/SplayDict)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=flat)](https://github.com/QuqqU/SplayDict/blob/master/LICENSE)
 [![Platform](https://img.shields.io/cocoapods/p/SplayDict.svg?style=flat)](https://cocoapods.org/pods/SplayDict)
-[![Swift 4.0](https://img.shields.io/badge/Swift-4.0-%23FB613C.svg)](https://developer.apple.com/swift/)
-[![Xcode 9](https://img.shields.io/badge/Xcode-9-blue.svg)](https://developer.apple.com/xcode)
+[![Swift](https://img.shields.io/badge/Swift-4.0-%23FB613C.svg)](https://developer.apple.com/swift/)
+[![Xcode](https://img.shields.io/badge/Xcode-9-green.svg)](https://developer.apple.com/xcode)
 
 
 
