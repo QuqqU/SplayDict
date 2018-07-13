@@ -153,7 +153,7 @@ _ = a[4]
 // You can use subscript to read value related to key.
 // If there is no key corresponding to input, return value as nil.
 
-- = a[12]{50}
+_ = a[12]{50}
 // You can set default value rather than nil.
 // If there is key corresponding to input, return value related to input key.
 // Otherwise, return default value.
