@@ -1,7 +1,6 @@
 # SplayDict
 
 
-[![CI Status](https://img.shields.io/travis/QuqqU/SplayDict.svg?style=flat)](https://travis-ci.org/QuqqU/SplayDict)
 [![Version](https://img.shields.io/cocoapods/v/SplayDict.svg?style=flat)](https://cocoapods.org/pods/SplayDict)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=flat)](https://github.com/QuqqU/SplayDict/blob/master/LICENSE)
 [![Platform](https://img.shields.io/cocoapods/p/SplayDict.svg?style=flat)](https://cocoapods.org/pods/SplayDict)
